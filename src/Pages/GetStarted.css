@@ -1,0 +1,61 @@
+.get-started-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom right, #eaf3fb, #ffffff);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.get-started-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 80%;         /* ✅ use large portion of the page width */
+  max-width: 1000px;  /* ✅ keep it clean on large screens */
+}
+
+.watermark-logo img {
+  width: 300px;   /* increased from 200px to 300px */
+  height: auto;
+  opacity: 0.10;
+}
+
+.get-started-box {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.get-started-box h1 {
+  font-size: 28px;
+  color: #002366;
+  margin-bottom: 30px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.button-group button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  background-color: #002366;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button-group button:hover {
+  background-color: #001244;
+}

@@ -1,0 +1,92 @@
+.out-item-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #f0f4ff, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.watermark img {
+  height: 350px;
+}
+
+.out-item-box {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  padding: 750px 750px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.out-item-box h2 {
+  margin-bottom: 24px;
+  color: #002366;
+}
+
+.out-item-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.out-item-box input,
+.out-item-box select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.out-item-box button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #002366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.out-item-box button:hover {
+  background-color: #001245;
+}
+
+/* 👇 Added styles for the top-right Dashboard button */
+.top-right-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.top-right-button button {
+  background-color: #004aad;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.top-right-button button:hover {
+  background-color: #003080;
+}

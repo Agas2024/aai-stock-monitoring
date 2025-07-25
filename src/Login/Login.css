@@ -1,0 +1,146 @@
+/* src/Login/Login.css */
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #e6f0fa, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.aai-logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #002366;
+  margin: 0;
+}
+
+.header p {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.subheading-box {
+  background-color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+.subheading-box h2 {
+  color: #002366;
+  font-weight: bold;
+  margin: 0;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background-color: #f4f7fe;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-box h3 {
+  text-align: center;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.login-box input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-box button {
+  padding: 12px;
+  background-color: #0d1d6d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #061145;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #002366;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+}
+
+.link-button:hover {
+  color: #001244;
+}
+
+.info-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #444;
+  text-align: center;
+}
+
+.change-username-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.change-username-box input {
+  width: 80%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.change-username-box button {
+  padding: 8px 16px;
+  background-color: #002366;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.change-username-box button:hover {
+  background-color: #001244;
+}
+

@@ -1,0 +1,62 @@
+.add-item-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.watermark {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.watermark img {
+  width: 300px;
+  height: auto;
+}
+
+.add-item-content {
+  background-color: #ffffff;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1;
+}
+
+.add-item-content h1 {
+  font-size: 28px;
+  color: #002366;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.button-group button {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #002366;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #0a47a7;
+}
