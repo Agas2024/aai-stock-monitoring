@@ -14,7 +14,7 @@ export default function ForgotPassword() {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/forgot-password', {
+      const res = await axios.post('https://aai-stock-backend.onrender.com/api/forgot-password', {
         username,
         newPassword
       });

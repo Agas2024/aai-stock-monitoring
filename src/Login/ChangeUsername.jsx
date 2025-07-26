@@ -8,7 +8,7 @@ export default function ChangeUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/change-username', {
+      const res = await axios.post('https://aai-stock-backend.onrender.com/api/change-username', {
         oldUsername,
         newUsername
       });
