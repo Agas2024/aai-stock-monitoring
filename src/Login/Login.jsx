@@ -9,27 +9,22 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-const handleLogin = async (e) => {
-  e.preventDefault();
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-  try {
-    // Wake up Render backend
-    await axios.get('https://aai-stock-backend.onrender.com');
+    try {
+      const res = await axios.post(
+        'https://aai-stock-backend.onrender.com/api/login',
+        { username, password }
+      );
 
-    const res = await axios.post('https://aai-stock-backend.onrender.com/api/login-test', {
-      username,
-      password,
-    });
-
-    if (res.status === 200) {
-      navigate('/get-started');
+      if (res.status === 200) {
+        navigate('/get-started');
+      }
+    } catch (err) {
+      alert(err.response?.data?.message || 'Login failed');
     }
-  } catch (err) {
-    alert(err.response?.data?.message || 'Login failed');
-  }
-};
-
-
+  };
 
   return (
     <div className="login-page">
