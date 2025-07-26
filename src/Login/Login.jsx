@@ -16,7 +16,7 @@ const handleLogin = async (e) => {
     // Wake up Render backend
     await axios.get('https://aai-stock-backend.onrender.com');
 
-    const res = await axios.post('https://aai-stock-backend.onrender.com/api/login', {
+    const res = await axios.post('https://aai-stock-backend.onrender.com/api/login-test', {
       username,
       password,
     });
