@@ -19,7 +19,7 @@ export default function OutItem() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/out-item', form);
+      const res = await axios.post('https://aai-stock-backend.onrender.com/api/out-item', form);
       alert(res.data.message);
       setForm({ assetId: '' });
     } catch (err) {

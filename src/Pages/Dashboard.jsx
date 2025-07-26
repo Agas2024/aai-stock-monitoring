@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [columnFilters, setColumnFilters] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://aai-stock-backend.onrender.com/api/products')
       .then(res => {
         console.log("✅ Products fetched:", res.data);
         setProducts(res.data);

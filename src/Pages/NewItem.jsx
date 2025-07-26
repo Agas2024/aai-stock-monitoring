@@ -28,7 +28,7 @@ export default function NewItem() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/products', form);
+      await axios.post('https://aai-stock-backend.onrender.com/api/products', form);
       alert('✅ Product added successfully!');
       setForm({
         installDate: '',
