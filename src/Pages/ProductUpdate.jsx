@@ -9,7 +9,7 @@ export default function ProductUpdateTable() {
   const [editedRow, setEditedRow] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://aai-stock-backend.onrender.com/api/products')
       .then(res => setProducts(res.data))
       .catch(err => console.error('❌ Fetch error:', err));
   }, []);
@@ -49,7 +49,7 @@ export default function ProductUpdateTable() {
   };
 
   const handleSave = (originalAssetId) => {
-    axios.put('http://localhost:5000/api/update-product', {
+    axios.put('https://aai-stock-backend.onrender.com/api/update-product', {
       ...editedRow,
       originalAssetId
     })
