@@ -11,7 +11,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // ensures Enter key submits the form
 
     if (!username || !password) {
       alert("Please fill in both username and password.");
@@ -24,7 +24,7 @@ export default function Login() {
       const res = await axios.post(
         'https://aai-stock-backend.onrender.com/api/login',
         { username, password },
-        { timeout: 10000 } // optional: prevents it from hanging forever
+        { timeout: 10000 }
       );
 
       if (res.status === 200) {
@@ -56,23 +56,26 @@ export default function Login() {
       <div className="login-box">
         <h3>Employee Login</h3>
 
-        <input
-          type="text"
-          placeholder="Enter Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        {/* Form element added here to allow Enter key login */}
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <button onClick={handleLogin} disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
+        </form>
 
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <button
