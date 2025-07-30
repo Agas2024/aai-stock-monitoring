@@ -14,9 +14,9 @@ export default function NewItem() {
     model: '',
     serialNumber: '',
     location: '',
-    Department: '',
+    department: '',
     remarks: '',
-    ITEM: ''
+    item: ''
   });
 
   const navigate = useNavigate();
@@ -39,9 +39,9 @@ export default function NewItem() {
         model: '',
         serialNumber: '',
         location: '',
-        Department: '',
+        department: '',
         remarks: '',
-        ITEM: ''
+        item: ''
       });
     } catch (err) {
       if (err.response?.status === 400) {
@@ -76,9 +76,9 @@ export default function NewItem() {
           <input type="text" name="model" placeholder="Model" value={form.model} onChange={handleChange} required />
           <input type="text" name="serialNumber" placeholder="Serial Number" value={form.serialNumber} onChange={handleChange} required />
           <input type="text" name="location" placeholder="Location" value={form.location} onChange={handleChange} required />
-          <input type="text" name="Department" placeholder="Department" value={form.Department} onChange={handleChange} required />
+          <input type="text" name="department" placeholder="Department" value={form.Department} onChange={handleChange} required />
           <input type="text" name="remarks" placeholder="Remarks" value={form.remarks} onChange={handleChange} />
-          <input type="text" name="ITEM" placeholder="Item" value={form.ITEM} onChange={handleChange} required />
+          <input type="text" name="item" placeholder="Item" value={form.ITEM} onChange={handleChange} required />
           <button type="submit">Submit</button>
         </form>
       </div>
