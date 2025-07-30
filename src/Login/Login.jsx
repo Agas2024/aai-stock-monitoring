@@ -7,22 +7,39 @@ import { useNavigate } from 'react-router-dom';
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    if (!username || !password) {
+      alert("Please fill in both username and password.");
+      return;
+    }
+
+    setLoading(true);
+
     try {
       const res = await axios.post(
         'https://aai-stock-backend.onrender.com/api/login',
-        { username, password }
+        { username, password },
+        { timeout: 10000 } // optional: prevents it from hanging forever
       );
 
       if (res.status === 200) {
         navigate('/get-started');
       }
     } catch (err) {
-      alert(err.response?.data?.message || 'Login failed');
+      if (err.code === 'ECONNABORTED') {
+        alert("Login request timed out. Please try again.");
+      } else if (err.response) {
+        alert(err.response.data.message || "Login failed");
+      } else {
+        alert("Server not responding. Please try again later.");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -38,19 +55,24 @@ export default function Login() {
 
       <div className="login-box">
         <h3>Employee Login</h3>
+
         <input
           type="text"
           placeholder="Enter Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+
         <input
           type="password"
           placeholder="Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleLogin}>Login</button>
+
+        <button onClick={handleLogin} disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
 
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <button
