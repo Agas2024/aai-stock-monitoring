@@ -11,7 +11,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // ensures Enter key submits the form
+    e.preventDefault();
 
     if (!username || !password) {
       alert("Please fill in both username and password.");
@@ -43,6 +43,13 @@ export default function Login() {
     }
   };
 
+  // 🔑 Trigger login on Enter key
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleLogin(e);
+    }
+  };
+
   return (
     <div className="login-page">
       <div className="header">
@@ -56,26 +63,25 @@ export default function Login() {
       <div className="login-box">
         <h3>Employee Login</h3>
 
-        {/* Form element added here to allow Enter key login */}
-        <form onSubmit={handleLogin}>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+        <input
+          type="text"
+          placeholder="Enter Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
 
-          <input
-            type="password"
-            placeholder="Enter Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
 
-          <button type="submit" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
-          </button>
-        </form>
+        <button onClick={handleLogin} disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
 
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <button
