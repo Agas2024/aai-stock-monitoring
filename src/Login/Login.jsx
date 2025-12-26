@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Login.css';
 import logo from '../assets/aai-logo.png';
@@ -9,6 +9,11 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  // ⭐ Warm-up Render backend when page first loads
+  useEffect(() => {
+    axios.get("https://aai-stock-backend.onrender.com");
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,7 +29,7 @@ export default function Login() {
       const res = await axios.post(
         'https://aai-stock-backend.onrender.com/api/login',
         { username, password },
-        { timeout: 10000 }
+        { timeout: 30000 }  // ⭐ increased timeout from 10s to 30s
       );
 
       if (res.status === 200) {
@@ -113,3 +118,4 @@ export default function Login() {
     </div>
   );
 }
+
