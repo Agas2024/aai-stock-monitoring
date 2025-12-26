@@ -23,7 +23,7 @@ export default function OldItem() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://aai-stock-backend.onrender.com/api/old-item', form);
+      const res = await axios.post('https://aai-stock-backend-5fs3.onrender.com/api/old-item', form);
       setPopupMessage(res.data.message);
       setPopupType('success');
       setForm({
