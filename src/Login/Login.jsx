@@ -12,7 +12,7 @@ export default function Login() {
 
   // ⭐ Warm-up Render backend when page first loads
   useEffect(() => {
-    axios.get("https://aai-stock-backend.onrender.com");
+    axios.get("https://aai-stock-backend-5fs3.onrender.com");
   }, []);
 
   const handleLogin = async (e) => {
@@ -27,7 +27,7 @@ export default function Login() {
 
     try {
       const res = await axios.post(
-        'https://aai-stock-backend.onrender.com/api/login',
+        'https://aai-stock-backend-5fs3.onrender.com/api/login',
         { username, password },
         { timeout: 30000 }  // ⭐ increased timeout from 10s to 30s
       );
