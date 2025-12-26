@@ -9,7 +9,7 @@ export default function ProductUpdateTable() {
   const [editedRow, setEditedRow] = useState({});
 
   useEffect(() => {
-    axios.get('https://aai-stock-backend.onrender.com/api/products')
+    axios.get('https://aai-stock-backend-5fs3.onrender.com/api/products')
       .then(res => setProducts(res.data))
       .catch(err => console.error('❌ Fetch error:', err));
   }, []);
